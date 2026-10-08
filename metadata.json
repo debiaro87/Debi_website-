@@ -1,0 +1,6 @@
+{
+  "name": "Shambu Special Secondary School",
+  "description": "Official website and school management portal for Shambu Special Secondary School in Ethiopia.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

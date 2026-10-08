@@ -1,0 +1,440 @@
+import { StudentRegistration, Teacher, GradeRecord, Assignment, NewsItem, EventItem, GalleryItem, ContactSubmission, SchoolStats } from '../types';
+
+export const INITIAL_SCHOOL_STATS: SchoolStats = {
+  totalStudents: 850,
+  totalTeachers: 48,
+  universityAcceptanceRate: 98.5,
+  modernLaboratories: 12,
+  establishedYear: 2008,
+  graduationRate: 99.2
+};
+
+export const INITIAL_TEACHERS: Teacher[] = [
+  {
+    id: 't1',
+    teacherId: 'T-2024-001',
+    name: 'Abebe Bikila',
+    email: 'abebe.b@shambuspecial.edu.et',
+    phone: '+251 91 123 4567',
+    department: 'STEM & Physics',
+    qualification: 'M.Sc. in Applied Physics, Addis Ababa University',
+    subjects: ['Advanced Physics Grade 11', 'Physics Grade 12'],
+    photoUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=400',
+    bio: 'Over 12 years of teaching high school physics with focus on practical mechanics and quantum principles.',
+    assignedGrades: ['Grade 11', 'Grade 12']
+  },
+  {
+    id: 't2',
+    teacherId: 'T-2024-002',
+    name: 'Dr. Chaltu Tadesse',
+    email: 'chaltu.t@shambuspecial.edu.et',
+    phone: '+251 91 234 5678',
+    department: 'Chemistry & Biology',
+    qualification: 'Ph.D. in Organic Chemistry, Jimma University',
+    subjects: ['Chemistry Grade 10', 'Chemistry Grade 12'],
+    photoUrl: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400',
+    bio: 'Passionate about environmental chemistry and guiding student laboratory research.',
+    assignedGrades: ['Grade 10', 'Grade 12']
+  },
+  {
+    id: 't3',
+    teacherId: 'T-2024-003',
+    name: 'Dawit Hailu',
+    email: 'dawit.h@shambuspecial.edu.et',
+    phone: '+251 91 345 6789',
+    department: 'Mathematics & Computer Science',
+    qualification: 'M.Sc. in Computer Science & Math, Wollega University',
+    subjects: ['Calculus Grade 12', 'ICT & Programming Grade 11'],
+    photoUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400',
+    bio: 'Lead coach for Ethiopia National Science Olympiad and Robotics Club.',
+    assignedGrades: ['Grade 11', 'Grade 12']
+  },
+  {
+    id: 't4',
+    teacherId: 'T-2024-004',
+    name: 'Hawine Megersa',
+    email: 'hawine.m@shambuspecial.edu.et',
+    phone: '+251 91 456 7890',
+    department: 'Languages (Afaan Oromoo & English)',
+    qualification: 'M.A. in English Literature & Linguistics',
+    subjects: ['English Language Grade 10', 'Literature Grade 11'],
+    photoUrl: 'https://images.unsplash.com/photo-1580894732413-80d0d5402a4d?auto=format&fit=crop&q=80&w=400',
+    bio: 'Dedicated to fostering strong critical thinking and articulate expression in future leaders.',
+    assignedGrades: ['Grade 10', 'Grade 11']
+  },
+  {
+    id: 't5',
+    teacherId: 'T-2024-005',
+    name: 'Kassahun Bekele',
+    email: 'kassahun.b@shambuspecial.edu.et',
+    phone: '+251 91 567 8901',
+    department: 'Social Sciences & Civics',
+    qualification: 'M.A. in Ethiopian History & Civics',
+    subjects: ['Civic Ethics Grade 9', 'Ethiopian History Grade 10'],
+    photoUrl: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=400',
+    bio: 'Inspiring patriotic civics education, community service, and ethical leadership.',
+    assignedGrades: ['Grade 9', 'Grade 10']
+  }
+];
+
+export const INITIAL_STUDENTS: StudentRegistration[] = [
+  {
+    id: 's1',
+    registrationNumber: 'SSSS/2026/0101',
+    firstName: 'Gamachu',
+    middleName: 'Toloosaa',
+    lastName: 'Gudeta',
+    gender: 'Male',
+    dateOfBirth: '2008-04-12',
+    nationality: 'Ethiopian',
+    gradeApplyingFor: 'Grade 12',
+    stream: 'Natural Science',
+    previousSchool: 'Shambu Comprehensive Secondary School',
+    studentPhotoUrl: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&q=80&w=300',
+    fatherName: 'Toloosaa Gudeta',
+    motherName: 'Lomi Wordofa',
+    guardianName: 'Toloosaa Gudeta',
+    phoneNumber: '+251 91 111 2233',
+    alternativePhone: '+251 92 222 3344',
+    parentEmail: 'toloosaa.g@gmail.com',
+    occupation: 'Agronomist',
+    region: 'Oromia',
+    zone: 'Horro Guduru Wollega',
+    woreda: 'Shambu Town',
+    town: 'Shambu',
+    houseNumber: '042',
+    status: 'Approved',
+    submittedAt: '2026-07-15T09:30:00Z',
+    notes: 'Outstanding regional entrance exam score (96%).'
+  },
+  {
+    id: 's2',
+    registrationNumber: 'SSSS/2026/0102',
+    firstName: 'Bontu',
+    middleName: 'Kebede',
+    lastName: 'Lema',
+    gender: 'Female',
+    dateOfBirth: '2009-08-21',
+    nationality: 'Ethiopian',
+    gradeApplyingFor: 'Grade 11',
+    stream: 'Natural Science',
+    previousSchool: 'Fincha Special School',
+    studentPhotoUrl: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=300',
+    fatherName: 'Kebede Lema',
+    motherName: 'Tirhas Gebre',
+    guardianName: 'Kebede Lema',
+    phoneNumber: '+251 91 222 3344',
+    alternativePhone: '+251 93 333 4455',
+    parentEmail: 'kebede.lema@yahoo.com',
+    occupation: 'Teacher',
+    region: 'Oromia',
+    zone: 'Horro Guduru Wollega',
+    woreda: 'Fincha Town',
+    town: 'Fincha',
+    houseNumber: '118',
+    status: 'Approved',
+    submittedAt: '2026-07-18T14:15:00Z',
+    notes: 'Top scorer in Oromia STEM Competition.'
+  },
+  {
+    id: 's3',
+    registrationNumber: 'SSSS/2026/0103',
+    firstName: 'Ebisa',
+    middleName: 'Alemayehu',
+    lastName: 'Feyisa',
+    gender: 'Male',
+    dateOfBirth: '2010-02-14',
+    nationality: 'Ethiopian',
+    gradeApplyingFor: 'Grade 10',
+    stream: 'General',
+    previousSchool: 'Hareto Secondary School',
+    studentPhotoUrl: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=300',
+    fatherName: 'Alemayehu Feyisa',
+    motherName: 'Werknesh Tufa',
+    guardianName: 'Alemayehu Feyisa',
+    phoneNumber: '+251 91 333 4455',
+    parentEmail: 'feyisa.alemu@gmail.com',
+    occupation: 'Civil Engineer',
+    region: 'Oromia',
+    zone: 'Horro Guduru Wollega',
+    woreda: 'Jimma Rare',
+    town: 'Hareto',
+    houseNumber: '08',
+    status: 'Pending',
+    submittedAt: '2026-08-01T11:20:00Z'
+  },
+  {
+    id: 's4',
+    registrationNumber: 'SSSS/2026/0104',
+    firstName: 'Toltu',
+    middleName: 'Dibaba',
+    lastName: 'Gutu',
+    gender: 'Female',
+    dateOfBirth: '2011-05-19',
+    nationality: 'Ethiopian',
+    gradeApplyingFor: 'Grade 9',
+    stream: 'General',
+    previousSchool: 'Shambu Primary School No. 1',
+    studentPhotoUrl: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&q=80&w=300',
+    fatherName: 'Dibaba Gutu',
+    motherName: 'Mulugeta Bedada',
+    guardianName: 'Dibaba Gutu',
+    phoneNumber: '+251 91 444 5566',
+    parentEmail: 'dibaba.gutu@hotmail.com',
+    occupation: 'Merchant',
+    region: 'Oromia',
+    zone: 'Horro Guduru Wollega',
+    woreda: 'Shambu Town',
+    town: 'Shambu',
+    houseNumber: '204',
+    status: 'Approved',
+    submittedAt: '2026-08-03T16:00:00Z'
+  }
+];
+
+export const INITIAL_GRADES: GradeRecord[] = [
+  {
+    id: 'g1',
+    studentId: 's1',
+    studentName: 'Gamachu Toloosaa Gudeta',
+    gradeLevel: 'Grade 12',
+    subject: 'Advanced Physics',
+    teacherName: 'Abebe Bikila',
+    semester: 'Semester 1',
+    academicYear: '2025/2026',
+    continuousAssessment: 38,
+    midtermExam: 19,
+    finalExam: 39,
+    totalScore: 96,
+    letterGrade: 'A+'
+  },
+  {
+    id: 'g2',
+    studentId: 's1',
+    studentName: 'Gamachu Toloosaa Gudeta',
+    gradeLevel: 'Grade 12',
+    subject: 'Chemistry',
+    teacherName: 'Dr. Chaltu Tadesse',
+    semester: 'Semester 1',
+    academicYear: '2025/2026',
+    continuousAssessment: 36,
+    midtermExam: 18,
+    finalExam: 37,
+    totalScore: 91,
+    letterGrade: 'A'
+  },
+  {
+    id: 'g3',
+    studentId: 's1',
+    studentName: 'Gamachu Toloosaa Gudeta',
+    gradeLevel: 'Grade 12',
+    subject: 'Calculus & Advanced Mathematics',
+    teacherName: 'Dawit Hailu',
+    semester: 'Semester 1',
+    academicYear: '2025/2026',
+    continuousAssessment: 39,
+    midtermExam: 20,
+    finalExam: 39,
+    totalScore: 98,
+    letterGrade: 'A+'
+  },
+  {
+    id: 'g4',
+    studentId: 's2',
+    studentName: 'Bontu Kebede Lema',
+    gradeLevel: 'Grade 11',
+    subject: 'Calculus Grade 11',
+    teacherName: 'Dawit Hailu',
+    semester: 'Semester 1',
+    academicYear: '2025/2026',
+    continuousAssessment: 37,
+    midtermExam: 18,
+    finalExam: 38,
+    totalScore: 93,
+    letterGrade: 'A'
+  }
+];
+
+export const INITIAL_ASSIGNMENTS: Assignment[] = [
+  {
+    id: 'a1',
+    title: 'Electromagnetism Problem Set & Lab Simulation',
+    subject: 'Advanced Physics',
+    gradeLevel: 'Grade 12',
+    teacherName: 'Abebe Bikila',
+    description: 'Solve problems 1-15 on Magnetic Induction and submit the Faraday Law circuit simulation worksheet.',
+    dueDate: '2026-08-20',
+    postedAt: '2026-08-05'
+  },
+  {
+    id: 'a2',
+    title: 'Organic Chemistry Polymer Synthesis Report',
+    subject: 'Chemistry',
+    gradeLevel: 'Grade 12',
+    teacherName: 'Dr. Chaltu Tadesse',
+    description: 'Prepare a 3-page literature summary on sustainable polymer synthesis and industrial applications.',
+    dueDate: '2026-08-25',
+    postedAt: '2026-08-04'
+  },
+  {
+    id: 'a3',
+    title: 'Python Data Structures & Algorithm Project',
+    subject: 'ICT & Programming',
+    gradeLevel: 'Grade 11',
+    teacherName: 'Dawit Hailu',
+    description: 'Build a Python CLI script that performs sorting and binary search on student records.',
+    dueDate: '2026-08-28',
+    postedAt: '2026-08-02'
+  }
+];
+
+export const INITIAL_NEWS: NewsItem[] = [
+  {
+    id: 'n1',
+    title: 'Shambu Special Secondary School Wins 1st Place at Oromia Regional Science Fair',
+    category: 'News',
+    summary: 'Our Grade 12 STEM team secured first place for their solar-powered water filtration prototype.',
+    content: 'We are thrilled to announce that Shambu Special Secondary School students Gamachu Toloosaa and Bontu Kebede achieved top honors at the 2026 Oromia Regional Science and Technology Competition in Adama. Their project featured an IoT-monitored solar filtration unit designed for rural communities in Horro Guduru Wollega.',
+    author: 'Editorial Team',
+    date: '2026-08-02',
+    imageUrl: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=800',
+    isImportant: true
+  },
+  {
+    id: 'n2',
+    title: '2026/2027 Academic Year Registration Now Open for Grade 9 Entrance Qualifiers',
+    category: 'Announcement',
+    summary: 'Online registration for newly admitted special entrance exam qualifiers is open until August 30.',
+    content: 'Parents and admitted students can now complete the Online Registration process on our portal. Ensure you upload your grade 8 regional transcript, birth certificate, and passport-size photo. Office hours for physical verification run Monday through Friday.',
+    author: 'Admissions Office',
+    date: '2026-08-01',
+    imageUrl: 'https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&q=80&w=800',
+    isImportant: true
+  },
+  {
+    id: 'n3',
+    title: 'Grade 12 National Exam Orientation & Mock Test Schedule',
+    category: 'Exam Schedule',
+    summary: 'Mock national examinations for Natural and Social Science streams will commence next week.',
+    content: 'All Grade 12 students are instructed to report to the Main ICT Hall for National Exam Preparation orientation. Practice tests will run from 8:30 AM to 12:30 PM daily under timed exam conditions.',
+    author: 'Academic Directorate',
+    date: '2026-07-28',
+    imageUrl: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&q=80&w=800'
+  }
+];
+
+export const INITIAL_EVENTS: EventItem[] = [
+  {
+    id: 'e1',
+    title: 'Annual STEM & Innovation Exhibition 2026',
+    category: 'Exhibition',
+    date: '2026-08-28',
+    time: '09:00 AM - 04:00 PM',
+    location: 'Shambu Campus Main Auditorium & STEM Labs',
+    description: 'Student research showcase featuring robotics, chemistry demos, renewable energy models, and software projects.',
+    imageUrl: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=800'
+  },
+  {
+    id: 'e2',
+    title: 'Parent-Teacher Conference (First Term Readiness)',
+    category: 'Meeting',
+    date: '2026-09-05',
+    time: '02:00 PM - 05:00 PM',
+    location: 'Conference Center',
+    description: 'Discussion on student orientation, boarding rules, academic targets, and university preparatory support.',
+    imageUrl: 'https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&q=80&w=800'
+  },
+  {
+    id: 'e3',
+    title: 'Inter-House Sports & Athletics Tournament',
+    category: 'Sports',
+    date: '2026-09-15',
+    time: '08:00 AM - 05:00 PM',
+    location: 'Shambu Stadium',
+    description: 'Track and field events, football championship, and volleyball tournament for house points.',
+    imageUrl: 'https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&q=80&w=800'
+  }
+];
+
+export const INITIAL_GALLERY: GalleryItem[] = [
+  {
+    id: 'gc-2026-all',
+    title: '12th Grade Graduating Class & Faculty',
+    category: 'Graduation',
+    imageUrl: '/gc_2026_class.jpg',
+    description: '12th grade GC of 2026',
+    date: '2026-03-23'
+  },
+  {
+    id: 'gc-2026-boys',
+    title: '12th Grade Graduating Male Students',
+    category: 'Graduation',
+    imageUrl: '/gc_2026_boys.jpg',
+    description: '12th grade GC of 2026',
+    date: '2026-03-23'
+  },
+  {
+    id: 'gc-2026-girls',
+    title: '12th Grade Graduating Female Students',
+    category: 'Graduation',
+    imageUrl: '/gc_2026_girls.jpg',
+    description: '12th grade GC of 2026',
+    date: '2026-03-23'
+  },
+  {
+    id: 'g0',
+    title: 'Principal Fekede Tadesse — School Leadership Portrait',
+    category: 'Campus',
+    imageUrl: '/fekede_tadesse.jpg',
+    description: 'Official leadership portrait of Mr. Fekede Tadesse, School Principal and Executive Director of Shambu Special Secondary School.',
+    date: '2026-08-15'
+  },
+  {
+    id: 'g1',
+    title: 'Modern Chemistry & Biology Research Facility',
+    category: 'Laboratories',
+    imageUrl: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&q=80&w=800',
+    description: 'Fully equipped state-of-the-art laboratory for practical experiments and student research.',
+    date: '2026-05-12'
+  },
+  {
+    id: 'g2',
+    title: 'High-Tech ICT Computer Center',
+    category: 'Classrooms',
+    imageUrl: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=800',
+    description: '120 high-speed computers equipped with programming tools, high-speed internet, and digital library resources.',
+    date: '2026-06-01'
+  },
+  {
+    id: 'g3',
+    title: 'Graduation Ceremony Class of 2025',
+    category: 'Graduation',
+    imageUrl: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&q=80&w=800',
+    description: 'Celebrating 100% university entry qualification for our graduating seniors.',
+    date: '2025-07-20'
+  },
+  {
+    id: 'g4',
+    title: 'Campus Central Quadrangle & Library Wing',
+    category: 'Campus',
+    imageUrl: 'https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?auto=format&fit=crop&q=80&w=800',
+    description: 'Serene academic environment nestled in Shambu Town, Horro Guduru Wollega.',
+    date: '2026-04-10'
+  },
+  {
+    id: 'g5',
+    title: 'Annual Robotics and Physics Demonstration',
+    category: 'Events',
+    imageUrl: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=800',
+    description: 'Students demonstrating autonomous rover navigation to visiting guests.',
+    date: '2026-05-25'
+  },
+  {
+    id: 'g6',
+    title: 'School Stadium Football Championship',
+    category: 'Sports',
+    imageUrl: 'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&q=80&w=800',
+    description: 'Exciting matches during our annual inter-school athletics competition.',
+    date: '2026-03-15'
+  }
+];
